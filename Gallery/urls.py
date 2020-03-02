@@ -2,7 +2,6 @@ from django.urls import path
 from . import views
 
 # URLconf
-app_name = "Gallery"
 urlpatterns = [
     path("", views.welcome, name="welcome"),
     path("gallery/", views.index, name="index"),
