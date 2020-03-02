@@ -4,7 +4,10 @@ body {
   width: 100%;
   overflow: hidden;
   margin: 0;
-  background-color: #02d7d5;
+  background: url("https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?cs=srgb&dl=person-on-a-bridge-near-a-lake-747964.jpg&fm=jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcome-text {
@@ -13,6 +16,13 @@ body {
   font-size: 70px;
   color: #fff;
   text-align: center;
+  font-size: 72px;
+}
+
+.title-design {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fullscreen-bg {
