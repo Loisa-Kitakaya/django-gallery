@@ -20,9 +20,9 @@ body {
 }
 
 .title-design {
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-color: #675bfc;
+  padding: 0;
+  margin-right: 1rem;
 }
 
 .fullscreen-bg {
