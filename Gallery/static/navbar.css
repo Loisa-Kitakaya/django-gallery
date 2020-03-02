@@ -141,6 +141,11 @@ ul a:hover {
   color: white;
 }
 
+#search,
+.search:focus {
+  outline: none;
+}
+
 ::placeholder {
   color: white;
 }
