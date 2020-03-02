@@ -9,3 +9,8 @@ class ImageUpload(forms.Form):
     location_upload = forms.CharField(max_length=30)
     category_upload = forms.CharField(max_length=30)
 
+
+class SearchImages(forms.Form):
+
+    search = forms.CharField(max_length=30)
+
