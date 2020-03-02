@@ -9,6 +9,11 @@ def welcome(request):
     return render(request, "welcome.html")
 
 
+## search view
+def search(request):
+    return render(request, "search.html")
+
+
 ## index view
 def index(request):
     return render(request, "index.html")
@@ -40,3 +45,18 @@ def image_upload(request):
 
     return redirect("index")
 
+
+## search_images view
+def search_image(request):
+
+    if request.method == "POST":
+
+        search_form = SearchImages(request.POST, request.FILES)
+
+        if search_form.is_valid():
+
+            to_search = search_form.cleaned_data["search"]
+
+            results = Images.objects.filter(image_name=to_search)
+
+    return redirect("search")
