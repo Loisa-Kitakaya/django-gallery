@@ -4,7 +4,7 @@ from django.db import models
 
 ## Images
 class Images(models.Model):
-    image = models.ImageField(null=True, blank=True, upload_to="uploadimg/")
+    image = models.ImageField(null=True, blank=True, upload_to="media/")
     image_name = models.CharField(max_length=30)
     image_description = models.CharField(max_length=200)
     location = models.ForeignKey("Location", on_delete=models.CASCADE,)
