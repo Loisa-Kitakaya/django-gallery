@@ -1,4 +1,29 @@
+body {
+  background: url("https://images.pexels.com/photos/82256/pexels-photo-82256.jpeg?cs=srgb&dl=wood-texture-background-pine-82256.jpg&fm=jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .app-body {
   margin-top: 1rem;
   text-align: center;
+}
+
+.search-page {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  padding: 20%;
+  background-color: #3c3c3cd3;
+  display: none;
+}
+
+.search-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
