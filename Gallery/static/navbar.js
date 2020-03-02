@@ -29,4 +29,11 @@ $(document).ready(function() {
   $(".close-search").click(function() {
     $("#dashboard").fadeOut("slow", "swing");
   });
+
+  $(".details-btn").click(function() {
+    $("#image-full").fadeIn("slow", "swing");
+  });
+  $(".close-search").click(function() {
+    $("#image-full").fadeOut("slow", "swing");
+  });
 });

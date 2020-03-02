@@ -89,7 +89,7 @@ ul a:hover {
   text-decoration: none;
   position: fixed;
   display: block;
-  padding: 0.75rem;
+  padding: 0.35rem;
   background-color: #f1f3f4;
   border-radius: 12px;
   color: black;
@@ -106,7 +106,7 @@ ul a:hover {
 }
 
 #top-widget {
-  bottom: 5rem;
+  bottom: 4rem;
   right: 1rem;
   text-decoration: none;
 }
