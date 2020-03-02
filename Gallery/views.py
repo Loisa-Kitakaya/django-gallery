@@ -10,7 +10,7 @@ def welcome(request):
 
 
 ## search view
-def search(request):
+def searchview(request):
     return render(request, "search.html")
 
 
@@ -20,7 +20,7 @@ def index(request):
 
 
 ## image upload view
-def image_upload(request):
+def imageupload(request):
 
     if request.method == "POST":
 
@@ -47,9 +47,9 @@ def image_upload(request):
 
 
 ## search_images view
-def search_image(request):
+def searchimage(request):
 
-    if request.method == "POST":
+    if request.method == "GET":
 
         search_form = SearchImages(request.POST, request.FILES)
 
@@ -59,4 +59,4 @@ def search_image(request):
 
             results = Images.objects.filter(image_name=to_search)
 
-    return redirect("search")
+    return redirect("searchview")

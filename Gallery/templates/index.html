@@ -112,7 +112,8 @@
     <!-- form -->
     <div class="search-page" id="dashboard">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form">
+      <form action="" class="search-form" method="POST">
+        {% csrf_token %}
         <div>
           <input type="file" name="image" id="image" />
         </div>
@@ -160,7 +161,8 @@
     <!-- form -->
     <div class="search-page" id="search-panel">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form">
+      <form action="" class="search-form" method="GET">
+        {% csrf_token %}
         <div>
           <input
             type="text"
