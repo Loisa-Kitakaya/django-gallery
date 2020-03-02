@@ -1,0 +1,146 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #f1f3f4;
+}
+
+nav a {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  padding: 6px 6px 6px 6px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in-out;
+  transition-duration: 250ms;
+}
+
+nav a:hover {
+  background-color: #3c3c3c;
+  border-color: white;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-evenly;
+    background-color: #f1f3f4;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+}
+
+ul a {
+  display: block;
+  padding: 8px 6px 8px 6px;
+  background-color: #f1f3f4;
+  color: rgb(104, 104, 104);
+  margin: 0;
+  text-decoration: none;
+  transition: ease-in;
+  transition-duration: 250ms;
+}
+
+ul a:hover {
+  padding: 8px 6px 8px 6px;
+  color: white;
+  background-color: #c4c4c4;
+  text-decoration: none;
+}
+
+.location_options {
+  z-index: -1;
+  margin: auto;
+}
+
+.category_options {
+  z-index: -1;
+  margin: auto;
+}
+
+.top_link {
+  border-top: 1px dotted #636363;
+}
+
+.bottom_link {
+  border-bottom: 1px dotted #636363;
+}
+.widget {
+  text-decoration: none;
+  position: fixed;
+  display: block;
+  padding: 0.75rem;
+  background-color: #f1f3f4;
+  border-radius: 12px;
+  color: black;
+  transition: ease-in-out;
+  transition-duration: 300ms;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.widget:hover {
+  transform: scale(1.25);
+  color: white;
+  background-color: #3c3c3c;
+}
+
+#top-widget {
+  bottom: 5rem;
+  right: 1rem;
+  text-decoration: none;
+}
+
+#bottom-widget {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
+.close-search {
+  color: white;
+  font-size: 50px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+#search,
+.search {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  background-color: transparent;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
