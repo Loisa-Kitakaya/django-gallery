@@ -17,9 +17,16 @@ $(document).ready(function() {
 
   //toggle search page
   $("#bottom-widget").click(function() {
-    $(".search-page").fadeIn("slow", "swing");
+    $("#search-panel").fadeIn("slow", "swing");
   });
   $(".close-search").click(function() {
     $(".search-page").fadeOut("slow", "swing");
+  });
+
+  $("#dash").click(function() {
+    $("#dashboard").fadeIn("slow", "swing");
+  });
+  $(".close-search").click(function() {
+    $("#dashboard").fadeOut("slow", "swing");
   });
 });
