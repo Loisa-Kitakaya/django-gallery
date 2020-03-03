@@ -42,9 +42,7 @@ def show_all():
 def save_image(picture, name, description, pic_location, pic_category):
     image_object = Images(image = picture, image_name = name, image_description = description, location = pic_location, category = pic_category)
     
-    saved_image_object = image_object.save()
-
-    return saved_image_object  
+    image_object.save()
 
 def get_image_by_id(pic_id):
     image_object = Images.objects.get(pk=pic_id)

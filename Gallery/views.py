@@ -26,13 +26,13 @@ def image_upload(request):
 
         if image_form.is_valid():
 
-            picture = image_form.cleaned_data["image"]
-            name = image_form.cleaned_data["image_name"]
-            description = image_form.cleaned_data["image_description"]
-            pic_location = image_form.cleaned_data["image_location"]
-            pic_category = image_form.cleaned_data["image_category"]
+            picture = image_form.cleaned_data["image_upload"]
+            name = image_form.cleaned_data["image_name_upload"]
+            description = image_form.cleaned_data["image_description_upload"]
+            pic_location = image_form.cleaned_data["location_upload"]
+            pic_category = image_form.cleaned_data["category_upload"]
 
-            save_image(picture, name, description, pic_location, pic_category)
+            save_image(picture=picture, name = name, description = description, pic_location = pic_location, pic_category = pic_category)
 
     return redirect("index")
 
