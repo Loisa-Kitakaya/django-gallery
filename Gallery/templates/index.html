@@ -60,28 +60,11 @@
     </div>
 
     <!-- app body -->
+    {% for image_item in all_images %}
     <div class="app-body container">
       <!-- should be grid -->
       <div class="card-body">
-        <img
-          id="peek-image"
-          src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?cs=srgb&dl=landscape-photography-of-snowy-mountain-1366919.jpg&fm=jpg"
-          alt="image"
-        />
-        <div class="description-container">
-          <a href="#" class="details-btn">see details</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="app-body container">
-      <!-- should be grid -->
-      <div class="card-body">
-        <img
-          id="peek-image"
-          src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?cs=srgb&dl=sunflower-selective-focus-photography-1366630.jpg&fm=jpg"
-          alt="image"
-        />
+        <img id="peek-image" src="{{ image_item.image }}" alt="image" />
         <div class="description-container">
           <a href="#" class="details-btn">see details</a>
         </div>
@@ -92,27 +75,21 @@
     <div class="image-page" id="image-full">
       <span class="close-search">&#x2718;</span>
       <div>
-        <img
-          id="full-image"
-          src="https://images.pexels.com/photos/1656579/pexels-photo-1656579.jpeg?cs=srgb&dl=ocean-wave-1656579.jpg&fm=jpg"
-          alt="image"
-        />
+        <img id="full-image" src="{{ image_item.image }}" alt="image" />
       </div>
       <div>
         <p class="image_details">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quod
-          doloribus, provident consequuntur quis consectetur commodi saepe
-          voluptas est, culpa adipisci minus cum nemo atque voluptatibus
-          voluptatem numquam molestias debitis.
+          {{ image_item.image_description }}
         </p>
       </div>
     </div>
+    {% endfor %}
 
     <!-- search body -->
     <!-- form -->
     <div class="search-page" id="dashboard">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form">
+      <form action="" class="search-form" method="POST">
         <div>
           <input type="file" name="image" id="image" />
         </div>
@@ -138,7 +115,7 @@
           <input
             type="text"
             class="search"
-            name="location"
+            name="image_location"
             id="location"
             placeholder="location..."
           />
@@ -147,7 +124,7 @@
           <input
             type="text"
             class="search"
-            name="category"
+            name="image_category"
             id="category"
             placeholder="category..."
           />
@@ -160,7 +137,7 @@
     <!-- form -->
     <div class="search-page" id="search-panel">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form">
+      <form action="" class="search-form" method="GET">
         <div>
           <input
             type="text"
