@@ -89,17 +89,17 @@
     <!-- form -->
     <div class="search-page" id="dashboard">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form" method="POST">
+      <form action="{%url 'image_upload'%}" class="search-form" method="POST">
         {% csrf_token %}
         <div>
-          <input type="file" name="image" id="image" />
+          <input type="file" name="image_upload" id="image_upload" />
         </div>
         <div>
           <input
             type="text"
             class="search"
-            name="image_name"
-            id="image_name"
+            name="image_name_upload"
+            id="image_name_upload"
             placeholder="image name..."
           />
         </div>
@@ -107,8 +107,8 @@
           <input
             type="text"
             class="search"
-            name="image_description"
-            id="image_description"
+            name="image_description_upload"
+            id="image_description_upload"
             placeholder="image description..."
           />
         </div>
@@ -116,8 +116,8 @@
           <input
             type="text"
             class="search"
-            name="image_location"
-            id="location"
+            name="location_upload"
+            id="location_upload"
             placeholder="location..."
           />
         </div>
@@ -125,8 +125,8 @@
           <input
             type="text"
             class="search"
-            name="image_category"
-            id="category"
+            name="category_upload"
+            id="category_upload"
             placeholder="category..."
           />
         </div>
@@ -138,7 +138,7 @@
     <!-- form -->
     <div class="search-page" id="search-panel">
       <span class="close-search">&#x2718;</span>
-      <form action="" class="search-form" method="GET">
+      <form action="{%url 'search_image'%}" class="search-form" method="GET">
         {% csrf_token %}
         <div>
           <input
