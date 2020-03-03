@@ -9,14 +9,12 @@ def welcome(request):
     return render(request, "welcome.html")
 
 
-## search view
-def search(request):
-    return render(request, "search.html")
-
-
 ## index view
 def index(request):
-    return render(request, "index.html")
+
+    all_images = show_all()
+
+    return render(request, "index.html", {"all_images" : all_images})
 
 
 ## image upload view
@@ -28,20 +26,13 @@ def image_upload(request):
 
         if image_form.is_valid():
 
-            img = Images.objects.get(pk=id)
-            loc = Location.objects.get(pk=id)
-            cat = Category.objects.get(pk=id)
+            picture = image_form.cleaned_data["image"]
+            name = image_form.cleaned_data["image_name"]
+            description = image_form.cleaned_data["image_description"]
+            pic_location = image_form.cleaned_data["image_location"]
+            pic_category = image_form.cleaned_data["image_category"]
 
-            img.image = image_form.cleaned_data["image"]
-            img.image_name = image_form.cleaned_data["image_name"]
-            img.image_description = image_form.cleaned_data["image_description"]
-            img.save()
-
-            loc.location = image_form.cleaned_data["location"]
-            loc.save()
-
-            cat.category = image_form.cleaned_data["category"]
-            cat.save()
+            save_image(picture, name, description, pic_location, pic_category)
 
     return redirect("index")
 
@@ -55,8 +46,8 @@ def search_image(request):
 
         if search_form.is_valid():
 
-            to_search = search_form.cleaned_data["search"]
+            pic_id = search_form.cleaned_data["search"]
 
-            results = Images.objects.filter(image_name=to_search)
+            search_result = get_image_by_id(pic_id)
 
-    return redirect("search")
+    return render(request, "search.html", {"search_result" : search_result})

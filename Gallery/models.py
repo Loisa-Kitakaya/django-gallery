@@ -4,7 +4,7 @@ from django.db import models
 
 ## Images
 class Images(models.Model):
-    image = models.ImageField(null=True, blank=True, upload_to="media/")
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
     image_name = models.CharField(max_length=30)
     image_description = models.CharField(max_length=200)
     location = models.ForeignKey("Location", on_delete=models.CASCADE,)
@@ -29,3 +29,36 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
+
+"""
+methods to save, delete, and retrieve data from the database
+"""
+
+def show_all():
+    image_objects = Images.objects.all()
+
+    return image_objects
+
+def save_image(picture, name, description, pic_location, pic_category):
+    image_object = Images(image = picture, image_name = name, image_description = description, location = pic_location, category = pic_category)
+    
+    saved_image_object = image_object.save()
+
+    return saved_image_object  
+
+def get_image_by_id(pic_id):
+    image_object = Images.objects.get(pk=pic_id)
+
+    return image_object
+
+@classmethod
+def delete_image(cls):
+    pass
+
+@classmethod
+def filter_by_category(cls, category):
+    pass
+
+@classmethod
+def filter_by_location(cls, location):
+    pass
