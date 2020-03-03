@@ -40,7 +40,7 @@ def image_upload(request):
 ## search_images view
 def search_image(request):
 
-    if request.method == "POST":
+    if request.method == "GET":
 
         search_form = SearchImages(request.POST, request.FILES)
 
@@ -50,4 +50,4 @@ def search_image(request):
 
             search_result = get_image_by_id(pic_id)
 
-    return render(request, "search.html", {"search_result" : search_result})
+    return render(request, "index.html", {"search_result" : search_result})
